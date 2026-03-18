@@ -171,20 +171,20 @@ Dado que se mantiene enfoque vanilla, se recomienda incorporar librerías puntua
   /documents
     /uploads
       /2026
-        /01 /02 /03 /04 /05 /06 /07 /08 /09 /10 /11 /12
+        /enero /febrero /marzo /abril /mayo /junio /julio /agosto /septiembre /octubre /noviembre /diciembre
       /2025
-        /01 /02 /03 /04 /05 /06 /07 /08 /09 /10 /11 /12
+        /enero /febrero /marzo /abril /mayo /junio /julio /agosto /septiembre /octubre /noviembre /diciembre
       ...
       /2020
-        /01 /02 /03 /04 /05 /06 /07 /08 /09 /10 /11 /12
+        /enero /febrero /marzo /abril /mayo /junio /julio /agosto /septiembre /octubre /noviembre /diciembre
     /exports
       /2026
-        /01 /02 /03 /04 /05 /06 /07 /08 /09 /10 /11 /12
+        /enero /febrero /marzo /abril /mayo /junio /julio /agosto /septiembre /octubre /noviembre /diciembre
       /2025
-        /01 /02 /03 /04 /05 /06 /07 /08 /09 /10 /11 /12
+        /enero /febrero /marzo /abril /mayo /junio /julio /agosto /septiembre /octubre /noviembre /diciembre
       ...
       /2020
-        /01 /02 /03 /04 /05 /06 /07 /08 /09 /10 /11 /12
+        /enero /febrero /marzo /abril /mayo /junio /julio /agosto /septiembre /octubre /noviembre /diciembre
 /config
   database.php
   app.php
@@ -196,6 +196,36 @@ Donde:
 - En ambos casos, la organización será histórica por tiempo: **año/mes** (de 2020 en adelante), para facilitar trazabilidad, búsquedas y respaldo.
 
 Esta organización permite separar responsabilidades sin depender de frameworks, facilitando pruebas, mantenimiento y crecimiento del sistema.
+
+### 8.1 Estructura sugerida de componentes frontend (HTML/CSS/JS puro)
+
+```text
+/frontend
+  /public
+    index.html
+    login.html
+    dashboard.html
+  /assets
+    /css
+      styles.css
+      components.css
+    /js
+      app.js
+      api-client.js
+      auth.js
+      validators.js
+      charts.js
+    /img
+  /views
+    /convocatorias
+    /proveedores
+    /propuestas
+    /evaluacion
+    /adjudicaciones
+    /reportes
+```
+
+Esta estructura separa recursos estáticos, lógica JavaScript y vistas por módulo, manteniendo orden y mantenibilidad en un enfoque vanilla.
 
 ---
 
