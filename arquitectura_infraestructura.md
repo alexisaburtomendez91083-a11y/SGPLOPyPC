@@ -15,16 +15,36 @@ Definir una arquitectura web clara, escalable y mantenible para soportar los mó
 
 ## 2. Vista general (alto nivel)
 
+La solución se organiza en 3 dominios conectados:
+1. **Canal de acceso**: usuarios interactúan con el frontend web publicado en Vercel.
+2. **Núcleo transaccional**: el backend PHP en Railway aplica reglas de negocio, validaciones y seguridad.
+3. **Persistencia y administración**: MariaDB almacena datos del proceso y phpMyAdmin facilita la operación técnica.
+
+Los documentos y exportaciones se gestionan desde backend para mantener control, trazabilidad y consistencia institucional.
+
 ```mermaid
 flowchart LR
-    U[Usuarios<br/>Público / Proveedor / Administrador] --> FE[Vercel<br/>Frontend HTML-CSS-JS]
-    FE -->|HTTPS (API REST/JSON)| BE[Railway<br/>Backend PHP]
-    BE -->|SQL| DB[(MariaDB en Railway)]
-    ADM[Administrador técnico] --> PMA[phpMyAdmin]
-    PMA --> DB
+    U[Usuarios<br/>Público / Proveedor / Administrador]
+    A[Administrador técnico]
 
-    BE --> FS[(Almacenamiento de documentos)]
-    BE --> REP[Servicios de reportes/exportación<br/>PDF, CSV, Excel]
+    subgraph VER["Vercel"]
+      FE[Frontend<br/>HTML + CSS + JS]
+    end
+
+    subgraph RLY["Railway"]
+      BE[Backend PHP<br/>API REST/JSON]
+      DB[(MariaDB)]
+      FS[(Almacenamiento de documentos)]
+      REP[Motor de exportación<br/>PDF / CSV / Excel]
+    end
+
+    U --> FE
+    FE -->|HTTPS| BE
+    BE -->|SQL| DB
+    BE --> FS
+    BE --> REP
+    A --> PMA[phpMyAdmin]
+    PMA --> DB
 ```
 
 ---
