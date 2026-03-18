@@ -227,6 +227,24 @@ Esta organización permite separar responsabilidades sin depender de frameworks,
 
 Esta estructura separa recursos estáticos, lógica JavaScript y vistas por módulo, manteniendo orden y mantenibilidad en un enfoque vanilla.
 
+### 8.3 Convención de nombre para documentos almacenados
+
+Para estandarizar los archivos en `uploads/` y `exports/`, se define el siguiente formato:
+
+`AAAAMMDD-rol-nombre_del_archivo.ext`
+
+Donde:
+- `AAAAMMDD`: fecha de creación o carga del archivo.
+- `rol`: tipo de actor o contexto del documento (`proveedor`, `licitacion`, `evaluacion`, `adjudicacion`, `contrato`, etc.).
+- `nombre_del_archivo`: nombre descriptivo en minúsculas y con guion bajo.
+- `ext`: extensión del archivo (`pdf`, `csv`, `xlsx`, etc.).
+
+Ejemplos:
+- `20260101-proveedor-propuesta_economica.pdf`
+- `20260101-licitacion-bases_convocatoria.pdf`
+- `20260101-evaluacion-dictamen_tecnico.xlsx`
+- `20260101-contrato-reporte_mensual.csv`
+
 ---
 
 ## 9. Escalabilidad y evolución esperada
