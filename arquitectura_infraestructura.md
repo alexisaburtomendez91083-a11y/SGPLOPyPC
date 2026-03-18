@@ -169,10 +169,31 @@ Dado que se mantiene enfoque vanilla, se recomienda incorporar librerías puntua
   /helpers
 /storage
   /documents
+    /uploads
+      /2026
+        /01 /02 /03 /04 /05 /06 /07 /08 /09 /10 /11 /12
+      /2025
+        /01 /02 /03 /04 /05 /06 /07 /08 /09 /10 /11 /12
+      ...
+      /2020
+        /01 /02 /03 /04 /05 /06 /07 /08 /09 /10 /11 /12
+    /exports
+      /2026
+        /01 /02 /03 /04 /05 /06 /07 /08 /09 /10 /11 /12
+      /2025
+        /01 /02 /03 /04 /05 /06 /07 /08 /09 /10 /11 /12
+      ...
+      /2020
+        /01 /02 /03 /04 /05 /06 /07 /08 /09 /10 /11 /12
 /config
   database.php
   app.php
 ```
+
+Donde:
+- `uploads/` almacenará documentos cargados al sistema (PDF, Excel, CSV, etc.).
+- `exports/` almacenará documentos generados por el sistema (reportes PDF, archivos Excel/CSV, etc.).
+- En ambos casos, la organización será histórica por tiempo: **año/mes** (de 2020 en adelante), para facilitar trazabilidad, búsquedas y respaldo.
 
 Esta organización permite separar responsabilidades sin depender de frameworks, facilitando pruebas, mantenimiento y crecimiento del sistema.
 
